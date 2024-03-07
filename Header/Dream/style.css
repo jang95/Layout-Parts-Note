@@ -1,0 +1,103 @@
+:root {
+  --text-color: #f0f4f5;
+  --background-color: #153761;
+  --accent-color: #69b32c;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  padding: 8px 12px;
+}
+
+.navbar__logo {
+  display: flex;
+  gap: 12px;
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.navbar__logo i {
+  color: var(--accent-color);
+  font-size: 32px;
+}
+
+.navbar__menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.navbar__menu li {
+  padding: 8px 12px;
+}
+
+.navbar__menu li:hover {
+  background-color: var(--accent-color);
+  border-radius: 4px;
+}
+.navbar__icons {
+  display: flex;
+  list-style: none;
+  color: var(--text-color);
+}
+
+.navbar__icons li {
+  padding: 8px 12px;
+}
+
+.navbar__toogleBtn {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: var(--accent-color);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar__menu li {
+    width: 100%;
+    text-align: center; /* text는 너비가 넓어질 경우 왼쪽으로 쏠림 */
+  }
+
+  .navbar__icons {
+    display: none;
+    width: 100%;
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .navbar__toogleBtn {
+    display: block;
+  }
+
+  .navbar__menu.active,
+  .navbar__icons.active {
+    display: flex;
+  }
+}
